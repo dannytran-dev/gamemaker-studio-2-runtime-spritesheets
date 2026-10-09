@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_class_texture_stream",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_class_texture_stream",
+  "parent":{
+    "name":"Class",
+    "path":"folders/RuntimeSpriteSheets/Scripts/TextureStream/Class.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

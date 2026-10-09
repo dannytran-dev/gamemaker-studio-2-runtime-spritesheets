@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_struct_texture_page",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_struct_texture_page",
+  "parent":{
+    "name":"Struct",
+    "path":"folders/RuntimeSpriteSheets/Scripts/TexturePage/Struct.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_class_texture_page_session",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_class_texture_page_session",
+  "parent":{
+    "name":"Class",
+    "path":"folders/RuntimeSpriteSheets/Scripts/TexturePage/Class.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_texture_stream_exists",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_texture_stream_exists",
+  "parent":{
+    "name":"Helpers",
+    "path":"folders/RuntimeSpriteSheets/Scripts/TextureStream/Helpers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

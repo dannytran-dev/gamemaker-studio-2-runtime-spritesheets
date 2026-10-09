@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_draw_texturepage_all",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_draw_texturepage_all",
+  "parent":{
+    "name":"Draw",
+    "path":"folders/RuntimeSpriteSheets/Scripts/TexturePage/Draw.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

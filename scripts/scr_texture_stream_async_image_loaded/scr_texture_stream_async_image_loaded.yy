@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_texture_stream_async_image_loaded",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_texture_stream_async_image_loaded",
+  "parent":{
+    "name":"TextureStream",
+    "path":"folders/RuntimeSpriteSheets/Scripts/TextureStream.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_spritesheet_exists",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_spritesheet_exists",
+  "parent":{
+    "name":"SpriteSheet",
+    "path":"folders/RuntimeSpriteSheets/Scripts/SpriteSheet.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

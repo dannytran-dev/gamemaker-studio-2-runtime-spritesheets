@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_spritesheet_system_init",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_spritesheet_system_init",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/RuntimeSpriteSheets/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_draw_image_general",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_draw_image_general",
+  "parent":{
+    "name":"Draw",
+    "path":"folders/RuntimeSpriteSheets/Scripts/Image/Draw.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
