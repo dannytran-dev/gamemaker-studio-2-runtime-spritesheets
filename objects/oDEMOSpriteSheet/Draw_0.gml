@@ -13,6 +13,21 @@ draw_text_transformed(24, 16, "Runtime Sprite Sheets", 2, 2, 0);
 draw_set_colour(_dim);
 draw_text(24, 52, "SPACE: toggle view    1: destroy sprite sheet    2: rebuild sprite sheet");
 
+// On-screen buttons for mouse and touch
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+for(var _b = 0; _b < array_length(buttonLabels_); _b++) {
+	var _bx = button_x(_b);
+	draw_set_colour(button_hover(_b) ? make_colour_rgb(64, 72, 96) : make_colour_rgb(40, 44, 58));
+	draw_roundrect(_bx, buttonY_, _bx + buttonW_, buttonY_ + buttonH_, false);
+	draw_set_colour(_accent);
+	draw_roundrect(_bx, buttonY_, _bx + buttonW_, buttonY_ + buttonH_, true);
+	draw_set_colour(_gui);
+	draw_text(_bx + buttonW_ / 2, buttonY_ + buttonH_ / 2, buttonLabels_[_b]);
+}
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+
 // Checks if sprite sheet exists before drawing
 if(!spritesheet_exists(spriteSheetName_)) {
 	draw_set_colour(_accent);

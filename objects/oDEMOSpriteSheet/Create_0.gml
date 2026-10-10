@@ -6,6 +6,9 @@
 // SPACE - Toggle between draw functions and texture page view
 // 1     - Destroy the sprite sheet (frees all texture pages)
 // 2     - Rebuild the sprite sheet
+//
+// The same three actions are on-screen buttons so mouse and touch users
+// (the HTML5 build on phones) can use the demo too.
 //-----------------------------------------------------------------------------
 
 spriteSheetName_ = "DemoSheet";
@@ -26,6 +29,63 @@ explosion_ = -1;
 panel_ = -1;
 orb_ = -1;
 blocks_ = [];
+
+// On-screen buttons in the top right, in the same order as press_button()
+buttonLabels_ = ["Toggle view", "Destroy", "Rebuild"];
+buttonW_ = 150;
+buttonH_ = 40;
+buttonGap_ = 10;
+buttonY_ = 16;
+
+///
+/// @function				button_x(_index)
+/// @description            Gets the left edge of an on-screen button
+///
+/// @param {Real}			_index - Button index
+/// @return {Real}
+///
+function button_x(_index) {
+	var _count = array_length(buttonLabels_);
+	var _totalW = _count * buttonW_ + (_count - 1) * buttonGap_;
+	return room_width - 24 - _totalW + _index * (buttonW_ + buttonGap_);
+}
+
+///
+/// @function				button_hover(_index)
+/// @description            Checks if the mouse (or touch) is over an on-screen button
+///
+/// @param {Real}			_index - Button index
+/// @return {Bool}
+///
+function button_hover(_index) {
+	var _bx = button_x(_index);
+	return point_in_rectangle(mouse_x, mouse_y, _bx, buttonY_, _bx + buttonW_, buttonY_ + buttonH_);
+}
+
+///
+/// @function				press_button(_index)
+/// @description            Runs the action for a button or its matching key
+///
+/// @param {Real}			_index - 0 toggle view, 1 destroy, 2 rebuild
+/// @return {Undefined}
+///
+function press_button(_index) {
+	switch(_index) {
+		case 0:
+			showPages_ = !showPages_;
+			break;
+		case 1:
+			// Removes sprite sheet and sprites from memory
+			if(spritesheet_exists(spriteSheetName_)) {
+				spritesheet_destroy(spriteSheetName_);
+				ready_ = false;
+			}
+			break;
+		case 2:
+			if(!spritesheet_exists(spriteSheetName_)) build_spritesheet();
+			break;
+	}
+}
 
 ///
 /// @function				build_spritesheet()

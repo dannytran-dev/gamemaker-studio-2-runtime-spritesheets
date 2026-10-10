@@ -2,16 +2,15 @@
 
 time_ += 1;
 
-if(keyboard_check_pressed(vk_space)) showPages_ = !showPages_;
+if(keyboard_check_pressed(vk_space)) press_button(0);
+if(keyboard_check_pressed(ord("1"))) press_button(1);
+if(keyboard_check_pressed(ord("2"))) press_button(2);
 
-// Removes sprite sheet and sprites from memory
-if(keyboard_check_pressed(ord("1")) && spritesheet_exists(spriteSheetName_)) {
-	spritesheet_destroy(spriteSheetName_);
-	ready_ = false;
-}
-
-if(keyboard_check_pressed(ord("2")) && !spritesheet_exists(spriteSheetName_)) {
-	build_spritesheet();
+// Mouse and touch. HTML5 maps the first touch to the mouse
+if(mouse_check_button_pressed(mb_left)) {
+	for(var _i = 0; _i < array_length(buttonLabels_); _i++) {
+		if(button_hover(_i)) press_button(_i);
+	}
 }
 
 // Only continue if were loading image into a texture stream
