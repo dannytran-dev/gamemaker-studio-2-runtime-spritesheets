@@ -2,8 +2,10 @@
 
 A GameMaker system that loads loose PNG files at runtime and packs them into texture pages on the GPU, so external art (downloaded, modded, CMS-driven or simply too numerous to bake into the project) can be drawn with the same batching benefits as compiled sprites.
 
-![Draw functions demo](docs/demo_draw_functions.png)
-![Packed texture pages](docs/demo_texture_pages.png)
+**[Try the live demo in your browser](https://dannytran-dev.github.io/gamemaker-studio-2-runtime-spritesheets/)**
+
+![Every draw_image_* function drawing from packed texture pages](docs/demo_draw_functions.gif)
+![Viewing the packed texture pages, then destroying and rebuilding the sheet](docs/demo_texture_pages.gif)
 
 *The demo packs 25 images (including two animated strips) into two 512×512 pages in about 14 ms, then draws them with every `draw_image_*` function.*
 
@@ -31,6 +33,8 @@ GameMaker **2024.4** or newer. Open `RuntimeSpriteSheets.yyp` and run the projec
 | `SPACE` | Toggle between draw functions and the texture page view |
 | `1` | Destroy the sprite sheet (frees all texture pages) |
 | `2` | Rebuild the sprite sheet |
+
+The same three actions are also on-screen buttons, so the demo works with mouse and touch.
 
 ## Quick start
 
@@ -143,7 +147,7 @@ Each takes the same arguments as its `draw_sprite_*` equivalent, with a `Texture
 
 - `draw_sprite_general` draws the whole texture page on HTML5, so `draw_image_general` and `draw_image_ext` draw textured quads instead. They work the same on every target.
 - Images larger than a page (minus its padding) are rejected with a log message.
-- **Web images on HTML5:** the browser only lets the game use an image from another domain if that server sends CORS headers (`Access-Control-Allow-Origin`). opengameart.org does not, so the URL demo cell works on desktop but shows "Download failed" in a browser. Host the images on your own server, or one that allows CORS, for HTML5 builds.
+- **Web images on HTML5:** in the live demo the "from a URL" cell shows "Download failed" for this reason. The browser only lets the game use an image from another domain if that server sends CORS headers (`Access-Control-Allow-Origin`). opengameart.org does not, so the URL demo cell works on desktop but shows "Download failed" in a browser. Host the images on your own server, or one that allows CORS, for HTML5 builds.
 - After `spritesheet_destroy` or `spritesheet_clear`, any image structs you kept are stale. Look the images up again after rebuilding.
 
 ## Project layout
